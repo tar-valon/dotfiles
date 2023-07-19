@@ -1,0 +1,11 @@
+require('plugins')
+require('mason-config')
+require('lspconfig').pylsp.setup{}
+require('code-completion')
+require('file-explorer')
+require('custom-keys')
+require('styling')
+require('syntax-highlight')
+require('settings')
+require('file-finder')
+require('statusbar')
