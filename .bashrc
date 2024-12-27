@@ -25,10 +25,18 @@ fi
 unset rc
 
 export HISTFILE=~/.bash_history
-export HISTSIZE=1000
+export HISTSIZE=10000
 export HISTCONTROL=ignoredups:erasedups  # Ignore duplicate commands
 
 bind 'set completion-ignore-case on'
 
+
+. "$HOME/.cargo/env"
+
+[ -f "/home/furqan/.ghcup/env" ] && . "/home/furqan/.ghcup/env" # ghcup-env
+
 # Starship prompt
 eval "$(starship init bash)"
+
+export PATH="/home/furqan/anaconda3/bin:$PATH"
+
