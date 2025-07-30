@@ -34,3 +34,4 @@ bind 'set completion-ignore-case on'
 eval "$(starship init bash)"
 
 
+. "$HOME/.cargo/env"

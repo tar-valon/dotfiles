@@ -1,184 +1,175 @@
-# or use │
-format = """
-[▓](fg:#303030)\
-$os\
-[⧸](bg:#303030 fg:#565859)\
-$directory\
-[⧸](bg:#303030 fg:#565859)\
-$git_branch\
-$git_status\
-$docker_context\
-[▓ ](fg:#303030)\
- $fill \
-[▓](fg:#303030)\
-$cmd_duration\
-$time\
-$python\
-$c\
-$elixir\
-$elm\
-$golang\
-$haskell\
-$java\
-$julia\
-$nodejs\
-$nim\
-$rust\
-[▓ ](fg:#303030)
-[~](fg:#06c993 bold)[>](fg:#00dded bold) 
-"""
-
-command_timeout = 5000
-# Disable the blank line at the start of the prompt
-# add_newline = false
-
-[cmd_duration]
-min_time = 500
-style = "bg:#303030 fg:#EC89CB"
-format = '[ took $duration  ]($style)[⧸](bg:#303030 fg:#565859)'
-#
-# You can also replace your username with a neat symbol like  to save some space
-[username]
-show_always = true
-style_user = "bg:#303030"
-style_root = "bg:#303030"
-format = '[$user ]($style)'
-
-[directory]
-style = "bg:#303030 fg:#60ADEC"
-format = "[  ](bg:#303030 fg:#0087af)[$path ]($style)[$read_only]($read_only_style)"
-truncation_length = 3
-# truncation_symbol = "…/"
-read_only = '  '
-read_only_style = "bg:#303030 fg:#F15156"
-
-# Here is how you can shorten some long paths by text replacement
-# similar to mapped_locations in Oh My Posh:
-[directory.substitutions]
-"Documents" = ""
-"Downloads" = ""
-"Music" = ""
-"Pictures" = ""
-"Videos" = ""
-# Keep in mind that the order matters. For example:
-# "Important Documents" = "  "
-# will not be replaced, because "Documents" was already substituted before.
-# So either put "Important Documents" before "Documents" or use the substituted version:
-# "Important  " = "  "
-
 [aws]
 symbol = "  "
-style = '#30d5c8'
-format = '[$symbol](style)'
+
+[buf]
+symbol = " "
 
 [c]
 symbol = " "
-style = "bg:#303030"
-format = '[ $symbol ]($style)'
+
+[cmake]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[crystal]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[directory]
+read_only = " 󰌾"
 
 [docker_context]
 symbol = " "
-style = "bg:#303030"
-format = '[ $symbol $context ]($style) $path'
 
 [elixir]
-symbol = " "
-style = "bg:#303030"
-format = '[ $symbol ]($style)'
+symbol = " "
 
 [elm]
 symbol = " "
-style = "bg:#303030"
-format = '[ $symbol ]($style)'
 
-[fill]
-symbol = ' '
-style = '(238)'
+[fennel]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
 
 [git_branch]
-symbol = ' '
-style = "bg:#303030 fg:#5bc706"
-format = '[ $symbol $branch ]($style)'
+symbol = " "
 
-[git_status]
-style = "bg:#303030 fg:#5bc706"
-conflicted = '🏳'
-up_to_date = '✓'
-untracked = ' '
-ahead = '⇡${count}'
-diverged = '⇕⇡${ahead_count}⇣${behind_count}'
-behind = '⇣${count}'
-stashed = ' '
-modified = ' '
-staged = '++\($count\)'
-renamed = '襁 '
-deleted = ' '
-format = '[ $all_status$ahead_behind ]($style)[⧸](bg:#303030 fg:#565859)'
+[git_commit]
+tag_symbol = '  '
 
 [golang]
 symbol = " "
-style = "bg:#303030"
-format = '[ $symbol ]($style)'
+
+[guix_shell]
+symbol = " "
 
 [haskell]
 symbol = " "
-style = "bg:#303030 fg:#5e5086"
-format = '[ $symbol ]($style)'
+
+[haxe]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[hostname]
+ssh_symbol = " "
 
 [java]
 symbol = " "
-style = "bg:#303030 fg:#ed8b00"
-format = '[ $symbol ]($style)'
 
 [julia]
 symbol = " "
-style = "bg:#303030"
-format = '[ $symbol ]($style)'
+
+[kotlin]
+symbol = " "
 
 [lua]
 symbol = " "
-style = "bg:#303030"
-format = '[$symbol](style)'
 
 [memory_usage]
 symbol = "󰍛 "
 
-[nodejs]
-symbol = ""
-style = "bg:#303030"
-format = '[ $symbol ]($style)'
+[meson]
+symbol = "󰔷 "
 
 [nim]
-symbol = " "
-style = "bg:#303030"
-format = '[ $symbol ]($style)'
+symbol = "󰆥 "
 
-[os]
-style = "bg:#303030 fg:#F4F4F4"
-format = '[ $symbol ]($style)'   
-disabled = false
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[ocaml]
+symbol = " "
 
 [os.symbols]
-Fedora = ''
-Arch = '󰣇'
-Ubuntu = ''
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+Nobara = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
 
 [package]
 symbol = "󰏗 "
 
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[pijul_channel]
+symbol = " "
+
 [python]
-symbol = ' '
-style = "bg:#303030 fg:#00AFAF"
-format = '[ $symbol](bg:#303030 fg:#fed142)[$virtualenv]($style)'
+symbol = " "
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
 
 [rust]
-symbol = ""
-style = "bg:#303030"
-format = '[ $symbol ]($style)'
+symbol = "󱘗 "
 
-[time]
-disabled = false
-time_format = "%T" # Hour:Minute Format
-style = "bg:#303030 fg:#06C993"
-format = '[ $time  ]($style)[⧸](bg:#303030 fg:#565859)'
+[scala]
+symbol = " "
 
+[swift]
+symbol = " "
+
+[zig]
+symbol = " "
+
+[gradle]
+symbol = " "
