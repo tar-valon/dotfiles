@@ -1,0 +1,163 @@
+set selection-clipboard	clipboard
+set smooth-scroll true
+set guioptions none
+set adjust-open "best"
+
+map i recolor
+map j feedkeys "<C-Down>"
+map k feedkeys "<C-Up>"
+map l feedkeys "<C-Right>"
+map h feedkeys "<C-Left>"
+map = zoom in
+map - zoom out
+map w toggle_statusbar
+
+# Open duplicate pdf
+map <C-y> exec "zathura $FILE"
+
+
+set recolor true
+
+# Lighthaus Colors:
+
+#set notification-error-bg       "#FC2929"
+#set notification-error-fg       "#18191E"
+#set notification-warning-bg     "#E25600"
+#set notification-warning-fg     "#18191E"
+#set notification-bg             "#255C99"
+#set notification-fg             "#18191E"
+#
+#set completion-bg               "#18191E"
+#set completion-fg               "#44B273"
+#set completion-group-bg         "#18191E"
+#set completion-group-fg         "#ED722E"
+#set completion-highlight-bg     "#FFFF00"
+#set completion-highlight-fg     "#21252D"
+#
+#set index-bg                    "#18191E"
+#set index-fg                    "#44B273"
+#set index-active-bg             "#21252D"
+#set index-active-fg             "#FFFF00"
+#
+#set inputbar-bg                 "#21252D"
+#set inputbar-fg                 "#FFFADE"
+#set statusbar-bg                "#21252D"
+#set statusbar-fg                "#D68EB2"
+#
+#set highlight-color             "#7EA3CC"
+#set highlight-active-color      "#255C99"
+#
+#set default-bg                  "#18191E"
+#set default-fg                  "#FFEE79"
+#
+#set render-loading              true
+#set render-loading-fg           "#FFEE79"
+#set render-loading-bg           "#18191E"
+#
+## Recolor mode settings
+#
+#set recolor-lightcolor          "#21252D"
+#set recolor-darkcolor           "#FFFADE"
+
+# Ayu mirage
+#set default-bg "#1f2430"
+#set default-fg "#cbccc6"
+#
+#set inputbar-bg "#1f2430"
+#set inputbar-fg "#cbccc6"
+#
+#set statusbar-bg "#191e2a"
+#set statusbar-fg "#cbccc6"
+#
+#set highlight-color "#565B66"
+#set highlight-active-color "#ffad66"
+#
+#set index-bg "#1f2430"
+#set index-fg "#cbccc6"
+#set index-active-bg "#565b66"
+#set index-active-fg "#cbccc6"
+#
+#set completion-bg "#191e2a"
+#set completion-fg "#cbccc6"
+#set completion-highlight-bg "#565b66"
+#set completion-highlight-fg "#1f2430"
+#
+#set notification-bg "#d5ff80"
+#set notification-fg "#1f2430"
+#set notification-error-bg "#f28779"
+#set notification-error-fg "#1f2430"
+#set notification-warning-bg "#ffcc77"
+#set notification-warning-fg "#1f2430"
+#
+#set recolor-lightcolor "#1f2430"
+#set recolor-darkcolor "#ffffff"
+#set recolor-reverse-video "true"
+#set recolor-keephue "true"
+
+# Rose pine
+#set default-bg                  "#191724"
+#set default-fg                  "#e0def4"
+#
+#set statusbar-fg                "#e0def4"
+#set statusbar-bg                "#555169"
+#
+#set inputbar-bg                 "#6e6a86"
+#set inputbar-fg                 "#ebbcba"
+#
+#set notification-bg             "#e0def4"
+#set notification-fg             "#555169"
+#
+#set notification-error-bg       "#f6c177"
+#set notification-error-fg       "#555169"
+#
+#set notification-warning-bg     "#ebbcba"
+#set notification-warning-fg     "#555169"
+#
+#set highlight-color             "rgba(0xeb, 0xbc, 0xba, 0.5)"
+#set highlight-active-color      "rgba(0xeb, 0x6f, 0x92, 0.5)"
+#
+#set completion-bg               "#6e6a86"
+#set completion-fg               "#ebbcba"
+#
+#set completion-highlight-fg     "#26233a"
+#set completion-highlight-bg     "#ebbcba"
+#
+#set recolor-lightcolor          "#191724"
+#set recolor-darkcolor           "#e0def4"
+#
+#set recolor                     "false"
+#set recolor-keephue             "false"
+
+# Rose pine moon
+set default-bg                  "#232136"
+set default-fg                  "#e0def4"
+
+set statusbar-fg                "#e0def4"
+set statusbar-bg                "#59546d"
+
+set inputbar-bg                 "#817c9c"
+set inputbar-fg                 "#232136"
+
+set notification-bg             "#817c9c"
+set notification-fg             "#232136"
+
+set notification-error-bg       "#817c9c"
+set notification-error-fg       "#ea9a97"
+
+set notification-warning-bg     "#817c9c"
+set notification-warning-fg     "#f6c177"
+
+set highlight-color             "rgba(0x3e, 0x8f, 0xb0, 0.5)"
+set highlight-active-color      "rgba(0x9c, 0xcf, 0xd8, 0.5)"
+
+set completion-bg               "#817c9c"
+set completion-fg               "#9ccfd8"
+
+set completion-highlight-fg     "#e0def4"
+set completion-highlight-bg     "#9ccfd8"
+
+set recolor-lightcolor          "#232136"
+set recolor-darkcolor           "#e0def4"
+
+set recolor                     "false"
+set recolor-keephue             "false"

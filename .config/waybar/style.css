@@ -1,0 +1,201 @@
+/* General */
+* {
+    font-family: 'FiraCodeNerdFontMono-Regular';
+    font-size: 14px;
+    min-height: 0;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+window#waybar {
+    /* background: rgba(25, 26, 28, 0.95); */
+    background: alpha(#0d1d37, 0.95);
+    /* transparent -> background: rgba(15,27,53,0.9); */
+    border-radius: 14px;
+    padding: 1px 12px;
+}
+
+/* Module Groups Containers */
+.modules-left,
+.modules-center,
+.modules-right {
+    margin: 0 4px;
+}
+
+
+#workspaces {
+    background: transparent;
+    margin: 3px 0px;
+    padding: 10px 6px;
+    margin-left: -6px;
+    margin-top: 2px;
+    margin-bottom: 4px;
+    border-radius: 26px;
+}
+
+#workspaces button {
+    min-width: 4px;
+    min-height: 4px;
+    padding: 1;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: alpha(#7f7f7f, 0.75);
+    transition: all 0.15s ease-in-out;
+}
+
+#workspaces button.active,
+#workspaces button:hover {
+    background-color: #48A9A6;
+    border-radius: 20px;
+    min-width: 25px;
+    transition: all 0.15s ease-in-out;
+}
+#workspaces button.urgent {
+    background-color: #C1666B;
+    border-radius: 20px;
+    min-width: 25px;
+    transition: all 0.15s ease-in-out;}
+#workspaces button.empty {
+    opacity: 0.45;
+}
+
+#workspaces button label {
+    font-size: 0px;
+}
+
+#workspaces button {
+    /* margin-top: 1px; */
+    /* margin-bottom: -1px; */
+    /* font-size: 12.5px; */
+    color: #7f7f7f;
+    /* font-weight: 800; */
+}
+
+/* Clock */
+#clock {
+    background: transparent;
+    border-radius: 14px;
+    padding: 0 12px;
+    color: #94BFBE;
+    font-weight: bold;
+}
+#clock:hover {
+    background: #282a36;
+}
+
+/* Audio Modules */
+#wireplumber {
+    /* background: #20222a; */
+    color: #B3D89C;
+    margin: 0 0px 0 0;
+    padding: 0 10px;
+    border-radius: 14px;
+}
+#wireplumber.muted {
+    color: #ff5c57;
+}
+
+#wireplumber#microphone,
+#wireplumber\\#microphone {
+    /* Note: If your Waybar uses 'wireplumber#microphone' id, it can be accessed in CSS with #wireplumber\#microphone */
+    /* background: #20222a; */
+    color: #82aaff;
+    margin: 0 8px 0 0;
+    border-radius: 14px;
+}
+
+/* Backlight */
+#backlight {
+    /* background: #20222a; */
+    color: #82aaff;
+    border-radius: 14px;
+    margin: 0 8px;
+    padding: 0 8px;
+}
+
+/* Network */
+#network {
+    /* background: #20222a; */
+    color: #82aaff;
+    border-radius: 14px;
+    margin: 0 8px;
+    padding: 0 10px;
+}
+
+#network.disconnected {
+    color: #ff5c57;
+    /* background: #20222a; */
+}
+
+/* Battery */
+#battery {
+    /* background: #20222a; */
+    color: #3DDC97;
+    border-radius: 14px;
+    margin: 0 8px;
+    padding: 0 10px;
+}
+#battery.warning {
+    color: #ffbe76;
+    /* background: #20222a; */
+}
+#battery.critical {
+    color: #ff5c57;
+    /* background: #20222a; */
+}
+
+/* Custom Power Modules */
+#custom-power,
+#custom-lock,
+#custom-reboot,
+#custom-quit {
+    /* background: #20222a; */
+    color: #028090;
+    padding: 0 8px;
+    margin: 0 3px;
+    border-radius: 14px;
+    transition: background 0.2s, color 0.2s;
+}
+#custom-power:active,
+#custom-power:hover,
+#custom-lock:hover,
+#custom-reboot:hover,
+#custom-quit:hover {
+    /* background: #44475a; */
+    color: #ff5c57;
+}
+
+/* Power Group Drawer */
+#group-group-power {
+    /* background: #232741; */
+    border-radius: 10px;
+    margin: 0 8px;
+    padding: 0 4px;
+}
+
+/* Weather */
+#custom-weather {
+    /* background: #20222a; */
+    border-radius: 14px;
+    padding: 0 12px;
+    color: #f7c948;
+}
+
+/* Privacy */
+#privacy {
+    /* background: #20222a; */
+    color: #E9C46A;
+    border-radius: 14px;
+    padding: 0 10px;
+    margin: 0 8px;
+}
+
+/* Tooltips */
+tooltip {
+    background: #20222a;
+    color: #fff;
+    font-size: 9px;
+    border-radius: 7px;
+    padding: 8px;
+}

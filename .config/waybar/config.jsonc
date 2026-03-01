@@ -1,0 +1,189 @@
+{
+  "position": "top",
+  "margin": "4 4 0",
+  "mod": "dock",
+  "spacing": 0,
+  // "height": 32,
+
+  "modules-left": [
+    "wireplumber",
+    "wireplumber#microphone",
+    "backlight",
+    "custom/weather",
+    "clock"
+  ],
+
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+
+  "modules-right": [
+    "privacy",
+    "battery",
+    "network",
+    "custom/vpn",
+    "group/group-power"
+  ],
+
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "active": "󱓻",
+    },
+  },
+
+   "clock": {
+    "tooltip-format": "{calendar}",
+    "format": "  {:%a %d      %I:%M}",
+    "calendar": {
+      "format": {
+        "months": "<span color='#FFD966'><b>{}</b></span>",
+        "days": "<span color='#6B8E23'><b>{}</b></span>",
+        "weekdays": "<span color='#4682B4'><b>{}</b></span>",
+        "today": "<span color='#FF6347'><b><u>{}</u></b></span>"
+      }
+    }
+  },
+
+  "wireplumber": {
+    "format": "{icon}   {volume}%",
+    "format-bluetooth": "󰂰",
+    "nospacing": 1,
+    "node-type": "Audio/Sink",
+    "tooltip-format": "{node_name} : {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "headphone": "",
+      "default": ""//["󰖀", "󰕾", ""]
+    },
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "scroll-step": 1
+  },
+
+  "wireplumber#microphone": {
+    "node-type": "Audio/Source",
+    "format": "󰍬",
+    "tooltip-format": "{node_name}: {volume}%",
+    "format-muted": "󰍭",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "scroll-step": 5
+  },
+
+  "backlight": {
+    "format": "{icon}  {percent}%",
+    "format-icons": [""]
+  },
+
+  "custom/weather": {
+    "exec": "${HOME}/scripts/get_weather.sh Enschede+Netherlands",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true,
+    "interval": 3600
+  },
+
+  "network": {
+    "format-wifi": "<span color='#82aaff'> {icon} </span> {essid} ",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format-ethernet": "<span color='#7FFF00'>󰈀 </span> Ethernet ",
+    "format-disconnected": "󰖪",
+    "tooltip-format-wifi": "<span color='#FF1493'> 󰅧 </span> {bandwidthUpBytes}  <span color='#00BFFF'> 󰅢 </span> {bandwidthDownBytes}",
+    "tooltip-format-ethernet": "󰈀  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 5,
+    "nospacing": 1
+  },
+
+
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-icons": {
+      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+    "format-full": " Charged",
+    "format-charging": " 󱐋{icon} {capacity}%",
+    "interval": 5,
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+    "tooltip": "{timeTo}",
+    "format-alt": "{health}"
+  },
+
+
+  "custom/vpn": {
+    "format": "VPN ",
+    "exec": "echo '{\"class\": \"connected\"}'",
+    "exec-if": "test -d /proc/sys/net/ipv4/conf/tun0",
+    "return-type": "json",
+    "interval": 5
+  },
+
+  "custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "shutdown now"
+  },
+
+  "group/group-power": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-power",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/power",
+      "custom/lock",
+      "custom/reboot"
+    ]
+  },
+
+  "custom/lock": {
+    "format": "󰌾",
+    "tooltip": false,
+    "on-click": "hyprlock"
+  },
+
+  "custom/reboot": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "reboot"
+  },
+
+  "privacy": {
+    "icon-spacing": 4,
+    "icon-size": 18,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-out",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      }
+    ],
+    "ignore-monitor": true
+  }
+}

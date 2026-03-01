@@ -1,2 +1,2 @@
 # dotfiles
-tmux/nvim configs
+Dotfiles for my linux and hyprland setup

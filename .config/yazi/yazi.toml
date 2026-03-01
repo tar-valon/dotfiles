@@ -1,9 +1,59 @@
 # yazi.toml
-[manager]
+[mgr]
 show_hidden = true
 sort_by = "mtime"
+sort_reverse = true
+sort_dir_first = false
+
+# Todo: fix mount plugin
+[[mgr.prepend_keymap]]
+on  = "M"
+run = "plugin mount"
+
+[preview]
+wrap = "yes"
+
+[tasks]
+image_bound      = [ 50000, 50000 ]
 
 [opener]
-edit = [
-	{ run = 'nvim $@', block = true, for = "unix" }
+play = [
+    { run = 'vlc "$@"', desc = "VLC", orphan = true, for = "unix" },
 ]
+
+edit = [
+    { run = 'hx "$@"', block = true, orphan = true, desc = "Helix", for = "unix" },
+]
+
+zathura = [
+    { run = 'zathura "$1"', orphan = true, desc = "Zathura", for = "unix" }
+]
+
+image = [
+    {run = 'loupe "$@"', desc = "Loupe", orphan = true, for = "unix"},
+]
+
+[open]
+rules = [
+    # Folder
+    { name = "*/", use = [
+        "edit",
+        "open",
+    ] },
+    # Text
+    { mime = "text/*", use = [
+        "edit",
+    ] },
+    { mime = "inode/empty", use = [
+        "edit",
+    ] },
+    # Pdf
+    { mime = "application/pdf", use = [
+        "zathura",
+        "open",
+    ] },
+    # Videos
+    { mime = "video/*", use = [ "play", "reveal" ] },
+    # Images
+    { mime = "image/*", use = [ "image", "reveal" ] },
+    ]

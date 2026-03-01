@@ -1,0 +1,118 @@
+ls
+hyprland
+sudo hx /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+shutdown now
+ls
+bash
+$nu.config-path
+hx /home/furqan/.config/nushell/config.nu
+ls
+cd Workspace/aoc/
+ls
+nix develop
+nix develop --help
+echo $SHELL
+echo $env.SHELL
+ls
+which $env.shell
+which $env.SHELL
+zellij
+nix develop -c nu
+sudo hx /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+ls
+hx src/emulator/cpu.rs
+cat src/emulator/memory.rs
+cat src/emulator/mod.rs
+clear
+cargo run
+ls
+ls src/
+cd src/
+ls
+ls emulator/
+cat emulator/mod.rs
+cat lib.rs
+rm -rf emulator/
+ls
+clear
+hx emulator.rs
+cd ..
+git add .
+git commit -m "chip-8 specification setup (memory, registers, screen etc)"
+git add .
+git push origin main
+clear
+cargo run
+cargo add rand
+git add .
+git commit -m "Implmented many Opcodes"
+git push origin main
+hx src/emulator.rs
+clear
+cargo run
+hx src/emulator.rs
+cargo run
+clear
+ls
+ls src
+hx src/emulator.rs
+ls Cargo.toml
+cat Cargo.toml
+cargo add sdl2
+cat Cargo.toml
+cargo run
+cat src/lib.rs
+cargo run
+cargo run test
+cargo build
+cargo run test
+cargo clean
+cargo run test
+cargo clean
+cargo run test
+pkg-config --libs sdl2
+hx src/main.rs
+cargo run test
+cargo run roms/1-chip8-logo.ch8
+cargo run roms/pong.rom
+cargo run roms/1-chip8-logo.ch8
+cargo run roms/pong.rom
+cargo run roms/superpong.ch8
+cargo run roms/8ceattourny_d1.ch8
+cargo run roms/superpong.ch8
+cargo run roms/8ceattourny_d1.ch8
+cargo run roms/pong.rom
+cargo run roms/1-chip8-logo.ch8
+cargo run roms/superpong.ch8
+hx src/emulator.rs
+cargo run roms/superpong.ch8
+cargo run roms/1-chip8-logo.ch8
+cargo run roms/superpong.ch8
+cargo run roms/1-chip8-logo.ch8
+cargo run roms/pong.rom
+cargo run roms/superpong.ch8
+cargo run roms/horseyJump.ch8
+cargo run roms/2-ibm-logo.ch8
+cargo run roms/5-quirks.ch8
+cargo run roms/8ceattourny_d1.ch8
+cargo run roms/businessiscontagious.ch8
+cargo run roms/DVN8.ch8
+cargo run roms/1-chip8-logo.ch8
+hx src/emulator.rs
+ls
+hx .gitignore
+cat README.md
+hx src/main.rs
+hx README.md
+git add .
+git commit -m "Implemented working version with playable roms"
+cat .gitignore
+ls
+git reset --mixed HEAD~1
+hx .gitignore
+git add .
+git status
+git commit -m "Implemented working version with playable roms"
+git push origin main
