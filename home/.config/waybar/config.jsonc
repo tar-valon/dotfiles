@@ -1,0 +1,192 @@
+// waybar config //
+
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "margin-left": 10,
+    "margin-right": 10,
+    "margin-top": 7,
+    // "margin-bottom": 0,
+    // "exclusive": true,
+    // "passthrough": false,
+    // "gtk-layer-shell": true,
+    // "reload_style_on_change": true,
+
+    "modules-left": ["hyprland/workspaces", "mpris"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["network", "wireplumber#microphone", "wireplumber", "backlight", "battery", "memory", "clock", "privacy", "group/group-power"],
+
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "default": "",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "active": "󱓻"
+        }
+    },
+
+    "hyprland/window": {
+        "format": "<span weight='bold'>{class}</span>",
+        "tootltip": false,
+        // "tooltip-format": "{node_name}: {volume}%",
+        "max-length": 120,
+        "icon": true
+    },
+
+    "mpris": {
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "<span color='grey'>{status_icon} {dynamic}</span>",
+        "max-length": 50,
+        "player-icons": {
+            // "default": "⏸",
+            "firefox": "󰈹",
+            "mpv": ""
+        },
+        "status-icons": {
+            "paused": "▶"
+        }
+    },
+
+    "wireplumber": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "󰂰",
+        "node-type": "Audio/Sink",
+        "tooltip-format": "{node_name}: {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": {
+          "headphone": "",
+          "default": ""//["󰖀", "󰕾", ""]
+        },
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "scroll-step": 1
+    },
+
+    "wireplumber#microphone": {
+        "node-type": "Audio/Source",
+        "format": "󰍬",
+        "tooltip-format": "{node_name}: {volume}%",
+        "format-muted": "󰍭",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "scroll-step": 5
+    },
+
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
+        "scroll-step": 1,
+        "min-length": 2
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": {
+          "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+        },
+        "format-full": " Charged",
+        "format-charging": " 󱐋{icon} {capacity}%",
+        "interval": 5,
+        "states": {
+          "warning": 20,
+          "critical": 10
+        },
+        "tooltip": "{timeTo}",
+        "format-alt": "{health}"
+    },
+
+    "memory": {
+        // "interval": 1,
+        "format": "{icon} {used}GB",
+        "tooltip-format": "Memory: {percentage}%",
+        "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
+        "max-length": 10
+    },
+
+    "network": {
+        "tooltip": true,
+        "format-wifi": "{icon}",
+        "format-icons": ["󰤟", "󰤢", "󰤥"],
+       // "format-wifi": "<i class='fa-solid fa-wifi-slash'></i>",
+        "format-ethernet": "󰈀",
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰖪",
+        "tooltip-format-disconnected": "Disconnected",
+        "interval": 5,
+    },
+
+    "clock": {
+        "format": " {:%a %d  %I:%M %p}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+
+    "privacy": {
+        "icon-spacing": 4,
+        "icon-size": 15,
+        "transition-duration": 250,
+        "modules": [
+            { "type": "screenshare", "tooltip": true, "tooltip-icon-size": 24 },
+            // { "type": "audio-out", "tooltip": true, "tooltip-icon-size": 24 },
+            { "type": "audio-in", "tooltip": true, "tooltip-icon-size": 24 }
+        ],
+        "ignore-monitor": true
+    },
+
+  "group/group-power": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-power",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/power",
+      "custom/lock",
+      "custom/reboot"
+    ]
+  },
+
+  "custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "shutdown now"
+  },
+
+  "custom/lock": {
+    "format": "󰌾",
+    "tooltip": false,
+    "on-click": "hyprlock"
+  },
+
+  "custom/reboot": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "reboot"
+  },
+
+}

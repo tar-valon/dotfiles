@@ -1,6 +1,0 @@
-border-radius=10
-layer=overlay
-on-button-right=dismiss-all
-
-[urgency=critical]
-background-color=#77282e
