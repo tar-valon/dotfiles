@@ -58,6 +58,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("hypridle")
   hl.exec_cmd("systemctl --user start hyprpolkitagent")
   hl.exec_cmd("udiskie")
+  hl.exec_cmd("batsignal -w 20 -c 15 -d 10 -f 80")
 end)
 
 
