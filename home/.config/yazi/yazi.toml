@@ -26,7 +26,7 @@ office = [
 	{ run = 'libreoffice %s', orphan = true, for = "unix" },
 ]
 pdf = [
-	{ run = '$HOME/.local/bin/sioyek %s', orphan = true, for = "unix" },
+	{ run = 'sioyek %s', orphan = true, for = "unix" },
 ]
 open = [
 	{ run = 'xdg-open %s', desc = "Open" },

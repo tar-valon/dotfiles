@@ -46,21 +46,3 @@ eval "$(fzf --bash)"
 # Starship prompt
 eval "$(starship init bash)"
 . "$HOME/.cargo/env"
-
-
-# >>> juliaup initialize >>>
-
-# !! Contents within this block are managed by juliaup !!
-
-case ":$PATH:" in
-    *:/home/furqan/.juliaup/bin:*)
-        ;;
-
-    *)
-        export PATH=/home/furqan/.juliaup/bin${PATH:+:${PATH}}
-        ;;
-esac
-# Tab completion for juliaup and julia channel selection
-[ -f "/home/furqan/.julia/juliaup/completions/bash.sh" ] && source "/home/furqan/.julia/juliaup/completions/bash.sh"
-
-# <<< juliaup initialize <<<
